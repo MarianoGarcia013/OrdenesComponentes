@@ -1,0 +1,173 @@
+**************************************** BASE DE DATO PRODUCCION DEL PARCIAL **********************************************
+USE [Produccion]
+GO
+/****** Object:  User [docentes22]    Script Date: 10/10/2023 20:55:00 ******/
+CREATE USER [docentes22] FOR LOGIN [docentes22] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  Table [dbo].[Componentes]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Componentes](
+	[codigo] [int] NOT NULL,
+	[nombre] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Table_1] PRIMARY KEY CLUSTERED 
+(
+	[codigo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Detalles_orden]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Detalles_orden](
+	[id] [int] NOT NULL,
+	[nro_orden] [int] NOT NULL,
+	[componente] [int] NOT NULL,
+	[cantidad] [int] NOT NULL,
+ CONSTRAINT [PK_Detalles_orden] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC,
+	[nro_orden] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Ordenes_produccion]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Ordenes_produccion](
+	[nro_orden] [int] IDENTITY(1,1) NOT NULL,
+	[fecha] [date] NOT NULL,
+	[modelo] [varchar](50) NOT NULL,
+	[estado] [varchar](50) NOT NULL,
+	[cantidad] [int] NOT NULL,
+ CONSTRAINT [PK_Ordenes_produccion] PRIMARY KEY CLUSTERED 
+(
+	[nro_orden] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  StoredProcedure [dbo].[cargar_detalle_406228]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[cargar_detalle_406228]
+@id int,
+@nro_orden int,
+@componente int,
+@cantidad int
+AS
+BEGIN
+	INSERT INTO dbo.Detalles_orden(id,nro_orden,componente,cantidad)
+	VALUES (@id,@nro_orden,@componente,@cantidad)
+END
+GO
+/****** Object:  StoredProcedure [dbo].[cargar_orden_produccion_406228]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[cargar_orden_produccion_406228]
+@nro_orden int,
+@fecha Datetime,
+@modelo varchar(50),
+@estado varchar (50),
+@cantidad int
+AS
+BEGIN
+	 INSERT INTO dbo.Ordenes_produccion (nro_orden, fecha, modelo, estado, cantidad)
+	 VALUES (@nro_orden, @fecha, @modelo, @estado, @cantidad)
+END
+GO
+/****** Object:  StoredProcedure [dbo].[consultar_componentes_406228]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[consultar_componentes_406228]
+AS
+BEGIN
+	SELECT*FROM dbo.Componentes
+END
+GO
+/****** Object:  StoredProcedure [dbo].[proxima_factura]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[proxima_factura]
+
+--(@id int output)
+
+AS
+
+BEGIN
+
+DECLARE @dynsql NVARCHAR(1000)
+
+DECLARE @id int
+
+SET @dynsql = 'select @id =isnull(max([nro_orden]),0)+1 from [dbo.Ordens_produccion];'
+
+EXEC sp_executesql @dynsql, N'@id int output', @id OUTPUT
+
+select @id
+
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_CONSULTAR_COMPONENTES]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_CONSULTAR_COMPONENTES]
+AS
+BEGIN
+	
+	SELECT * from Componentes order by 2;
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_INSERTAR_DETALLE]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_INSERTAR_DETALLE] 
+	@nro_orden int,
+	@id int, 
+	@componente int, 
+	@cantidad int
+AS
+BEGIN
+	INSERT INTO Detalles_orden(nro_orden,id, componente, cantidad)
+    VALUES (@nro_orden, @id, @componente, @cantidad);
+  
+END
+GO
+/****** Object:  StoredProcedure [dbo].[SP_INSERTAR_MAESTRO]    Script Date: 10/10/2023 20:55:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_INSERTAR_MAESTRO] 
+	@fecha date, 
+	@modelo varchar(50),
+	@estado varchar(50),	
+	@cantidad int,
+	@nro_orden int OUTPUT
+AS
+BEGIN
+	INSERT INTO Ordenes_produccion(fecha, modelo, cantidad, estado)
+    VALUES (@fecha, @modelo, @cantidad, @estado);
+    SET @nro_orden = SCOPE_IDENTITY();
+END
+
+
+select * from Ordenes_produccion
+GO
