@@ -1,0 +1,33 @@
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\bin\Debug\Parcial2023.exe.config
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\bin\Debug\Parcial2023.exe
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\bin\Debug\Parcial2023.pdb
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.AssemblyReference.cache
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.SuggestedBindingRedirects.cache
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\obj\Debug\Produccion.Presentacion.FrmAlta.resources
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\obj\Debug\Parcial2023.Properties.Resources.resources
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.GenerateResource.cache
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.CoreCompileInputs.cache
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\obj\Debug\Parcial2023.exe
+D:\UTN\TUP PROG II\2023\Parcial I\Parcial I\Produccion\Parcial2023\obj\Debug\Parcial2023.pdb
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\bin\Debug\Parcial2023.exe.config
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\bin\Debug\Parcial2023.exe
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\bin\Debug\Parcial2023.pdb
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.AssemblyReference.cache
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.SuggestedBindingRedirects.cache
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\obj\Debug\Produccion.Presentacion.FrmAlta.resources
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\obj\Debug\Parcial2023.Properties.Resources.resources
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.GenerateResource.cache
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.CoreCompileInputs.cache
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\obj\Debug\Parcial2023.exe
+D:\UTN\ProgramacionII\2023\2Cuatrimestre\Parcial\Produccion\Parcial2023\obj\Debug\Parcial2023.pdb
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\bin\Debug\Parcial2023.exe.config
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\bin\Debug\Parcial2023.exe
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\bin\Debug\Parcial2023.pdb
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.AssemblyReference.cache
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.SuggestedBindingRedirects.cache
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\obj\Debug\Produccion.Presentacion.FrmAlta.resources
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\obj\Debug\Parcial2023.Properties.Resources.resources
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.GenerateResource.cache
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\obj\Debug\Parcial2023.csproj.CoreCompileInputs.cache
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\obj\Debug\Parcial2023.exe
+C:\Users\alumno\Downloads\ParcialChanameAlexis\Produccion\Parcial2023\obj\Debug\Parcial2023.pdb
